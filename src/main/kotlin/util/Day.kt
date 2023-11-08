@@ -1,11 +1,11 @@
 // Heavily inspired by SizableShrimp's structure :)
 package util
 
-abstract class Day(protected val input: String) {
-    protected val parsed: Any
+abstract class Day(protected var input: String) {
+    protected val lines: List<String>
 
     init {
-        parsed = parseInput()
+        lines = parseInput()
     }
 
     @Suppress("unused")
@@ -24,8 +24,10 @@ abstract class Day(protected val input: String) {
     /**
      * Used in constructor to parse input. Override this if it's helpful to parse differently.
      */
-    fun parseInput(): Any {
-        return input.lines()
+    fun parseInput(): List<String> {
+        val lines = input.lines()
+        if (lines.last().isEmpty()) return lines.dropLast(1)
+        return lines
     }
 
     /**
