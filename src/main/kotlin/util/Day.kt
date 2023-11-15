@@ -33,7 +33,7 @@ abstract class Day(protected var input: String) {
     /**
      * Represents the solution to part 1 and part 2 of the day's puzzle.
      */
-    data class Result(val part1: Any?, val part2: Any? = null) {
+    data class Result(val part1: Any? = null, val part2: Any? = null) {
         override fun toString(): String {
             return "\tPart 1: $part1\n\tPart 2: $part2"
         }
