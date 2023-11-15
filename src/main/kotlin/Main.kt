@@ -40,7 +40,11 @@ fun runDay(day: Int) {
         val dayClass = Class.forName("adventOfCode2015.Day$dayString")
         val dayConstructor = dayClass.getConstructor(String::class.java)
 
-        val dayData = File("src/main/resources/Day$dayString.txt").readText()
+        val dayData = if (File("src/main/resources/Day${dayString}test.txt").exists()) {
+            File("src/main/resources/Day${dayString}test.txt").readText()
+        } else {
+            File("src/main/resources/Day$dayString.txt").readText()
+        }
         val dayInstance = dayConstructor.newInstance(dayData)
         println("Day $day")
         dayInstance.javaClass.getMethod("run").invoke(dayInstance)
