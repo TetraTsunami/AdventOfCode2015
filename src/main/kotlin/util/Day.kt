@@ -5,7 +5,8 @@ abstract class Day(protected var input: String) {
     protected val lines: List<String>
 
     init {
-        lines = parseInput()
+        input = parseInput()
+        lines = parseToList()
     }
 
     @Suppress("unused")
@@ -24,10 +25,21 @@ abstract class Day(protected var input: String) {
     /**
      * Used in constructor to parse input. Override this if it's helpful to parse differently.
      */
-    fun parseInput(): List<String> {
+    fun parseToList(): List<String> {
         val lines = input.lines()
         if (lines.last().isEmpty()) return lines.dropLast(1)
         return lines
+    }
+
+    /**
+     * Parse input to a string.
+     */
+    fun parseInput(): String {
+        if (input.lines().size == 2) {
+            // single line
+            return input.dropLast(2) // drop \r\n
+        }
+        return input
     }
 
     /**
