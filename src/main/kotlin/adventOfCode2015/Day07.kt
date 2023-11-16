@@ -51,7 +51,7 @@ class Day07(input: String) : Day(input) {
             }
         }
     }
-    override fun solve(): Result {
+    override fun solve() {
         for (line in lines) {
             val command = line.split(" ")
             val name = command.last()
@@ -158,6 +158,6 @@ class Day07(input: String) : Day(input) {
             if (relies.size == 0) break
         }
         // board populated, now evaluate
-        return Result(secretSecond, circuits["a"]?.get())
+        a(secretSecond!!, circuits["a"]?.get()!!)
     }
 }

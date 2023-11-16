@@ -4,7 +4,7 @@ import java.util.Scanner
 
 @Suppress("unused")
 class Day08(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         var totalCode = 0
         var totalPrint = 0
         var totalMeta = 0
@@ -37,6 +37,6 @@ class Day08(input: String) : Day(input) {
             totalPrint += linePrint
             totalMeta += lineMeta + lineCode
         }
-        return Result(totalCode - totalPrint, totalMeta - totalCode)
+        a(totalCode - totalPrint, totalMeta - totalCode)
     }
 }

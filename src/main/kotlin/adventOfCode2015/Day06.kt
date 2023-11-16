@@ -6,7 +6,7 @@ class Day06(input: String) : Day(input) {
     var lights = Array<Array<Boolean>>(1000) { Array<Boolean>(1000) { false } }
     var lightsAna = Array(1000) { Array(1000) { 0 } }
 
-    override fun solve(): Result {
+    override fun solve() {
         for (line in lines) {
             val instructions = line.split(' ')
             when (instructions[0]) {
@@ -51,13 +51,14 @@ class Day06(input: String) : Day(input) {
                 }
             }
         }
-        return Result(countLights(true), countLights2())
+        a(countLights(true))
+        a(countLights2())
     }
 
     fun changeLights(coord1: List<String>, coord2: List<String>, state: Boolean) {
         for (x in coord1[0].toInt()..coord2[0].toInt()) {
             for (y in coord1[1].toInt()..coord2[1].toInt()) {
-                lights[x][y] = state;
+                lights[x][y] = state
             }
         }
     }
@@ -73,7 +74,7 @@ class Day06(input: String) : Day(input) {
     fun toggleLights(coord1: List<String>, coord2: List<String>) {
         for (x in coord1[0].toInt()..coord2[0].toInt()) {
             for (y in coord1[1].toInt()..coord2[1].toInt()) {
-                lights[x][y] = !lights[x][y];
+                lights[x][y] = !lights[x][y]
             }
         }
     }

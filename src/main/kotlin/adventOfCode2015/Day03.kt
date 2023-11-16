@@ -3,7 +3,7 @@ import util.*
 
 @Suppress("unused")
 class Day03(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         var x = 0
         var y = 0
         val pastCoords = mutableSetOf<Pair<Int, Int>>()
@@ -17,6 +17,7 @@ class Day03(input: String) : Day(input) {
             }
             pastCoords.add(Pair(x ,y))
         }
+        a(pastCoords.size)
         x = 0
         y = 0
         var xr = 0
@@ -42,6 +43,6 @@ class Day03(input: String) : Day(input) {
                 pastRoboCoords.add(Pair(xr, yr))
             }
         }
-        return Result(pastCoords.size, pastRoboCoords.size)
+        a(pastRoboCoords.size)
     }
 }

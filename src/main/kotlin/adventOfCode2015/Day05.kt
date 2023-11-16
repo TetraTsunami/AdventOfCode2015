@@ -3,7 +3,7 @@ import util.*
 
 @Suppress("unused")
 class Day05(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         var total = 0
         for (line in lines) {
             if (line.matches(Regex(".*(ab|cd|pq|xy).*"))) {
@@ -15,6 +15,7 @@ class Day05(input: String) : Day(input) {
                 }
             }
         }
+        a(total)
         var total2 = 0
         for (line in lines) {
             if (line.matches(Regex(".*(..).*\\1.*"))) {
@@ -23,6 +24,6 @@ class Day05(input: String) : Day(input) {
                 }
             }
         }
-        return Result(total, total2)
+        a(total2)
     }
 }

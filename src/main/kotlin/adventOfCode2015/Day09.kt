@@ -3,7 +3,7 @@ import util.*
 
 @Suppress("unused")
 class Day09(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         val distances = mutableMapOf<List<String>, Int>()
         for (line in lines) {
             val parts = line.split(" ")
@@ -18,7 +18,7 @@ class Day09(input: String) : Day(input) {
             fastestRoutes.addAll(route)
         }
 
-        return Result(fastestRoutes.minBy { it.second }, fastestRoutes.maxBy { it.second })
+        a(fastestRoutes.minBy { it.second }, fastestRoutes.maxBy { it.second })
     }
 
     fun fastestRoute(start: String, distances: Map<List<String>, Int>, distance: Int = 0, past: MutableList<String> = mutableListOf()): List<Pair<List<String>, Int>> {

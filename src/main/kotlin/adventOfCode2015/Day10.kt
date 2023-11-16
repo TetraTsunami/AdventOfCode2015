@@ -4,16 +4,16 @@ import java.util.Scanner
 
 @Suppress("unused")
 class Day10(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         var string = input
         for (i in 0..<40) {
             string = convolute(string)
         }
-        val res1 = string.length
+        a(string.length)
         for (i in 0..<10) {
             string = convolute(string)
         }
-        return Result(res1, string.length)
+        a(string.length)
     }
 
     fun convolute(inp: String): String {

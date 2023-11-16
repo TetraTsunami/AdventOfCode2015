@@ -21,9 +21,12 @@ fun main(args: Array<String>) {
     print("Pick a day, \"a\" for all, or \"r\" for highest implemented: ")
     val input = scanner.nextLine()
     if (input == "a") {
+        val startTime = System.currentTimeMillis()
         for (day in 1..25) {
             runDay(day)
         }
+        val endTime = System.currentTimeMillis()
+        println("Total time: ${(endTime - startTime) / 1000.0} seconds")
     } else if (input == "r" || input == "") {
         runLatest()
     } else if (input.toInt() in 1..25) {
@@ -51,7 +54,7 @@ fun runDay(day: Int) {
         println("Day $day")
         dayInstance.javaClass.getMethod("run").invoke(dayInstance)
     } catch (e: ClassNotFoundException) {
-        println("Day $day not implemented yet.")
+        println("Day $day\n\tNot Implemented")
     }
 }
 

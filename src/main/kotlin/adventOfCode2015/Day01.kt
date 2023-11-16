@@ -4,7 +4,7 @@ import util.*
 @Suppress("unused")
 class Day01(input: String) : Day(input) {
     var floor = 0
-    override fun solve(): Result {
+    override fun solve() {
         var basement = -1
         for ((i, dir) in input.withIndex()) {
             when (dir) {
@@ -13,6 +13,6 @@ class Day01(input: String) : Day(input) {
             }
             if (basement == -1 && floor == -1) basement = i + 1
         }
-        return Result(floor, basement)
+        a(floor, basement)
     }
 }

@@ -4,13 +4,12 @@ import kotlin.text.StringBuilder
 
 @Suppress("unused")
 class Day11(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         var string = input
-        var res1: String? = null
         while (true) {
             string = increment(string)
-            if (meetsRequirements(string) && res1 == null) res1 = string
-            else if (meetsRequirements(string)) return Result(res1, string)
+            if (meetsRequirements(string) && !part1Solved) a(string)
+            else if (meetsRequirements(string)) a(string)
         }
     }
 

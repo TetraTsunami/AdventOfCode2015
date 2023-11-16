@@ -4,7 +4,7 @@ import util.*
 @Suppress("unused")
 class Day02(input: String) : Day(input) {
     val example = listOf("2x3x4")
-    override fun solve(): Result {
+    override fun solve() {
         var totalPaper = 0
         var totalRibbon = 0
         for (line in lines) {
@@ -23,6 +23,6 @@ class Day02(input: String) : Day(input) {
             }
             totalRibbon += dims.reduce {acc, i -> acc * i}
         }
-        return Result(totalPaper, totalRibbon)
+        a(totalPaper, totalRibbon)
     }
 }

@@ -3,12 +3,13 @@ import util.*
 
 @Suppress("unused")
 class Day12(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         val numbers = Regex("-?[0-9]+").findAll(input)
         var totalPt1 = 0
         for (number in numbers) {
             totalPt1 += number.value.toInt()
         }
+        a(totalPt1)
 
         val builder = StringBuilder(input)
         val reds = Regex("\"red\"").findAll(input)
@@ -24,7 +25,7 @@ class Day12(input: String) : Day(input) {
         for (number in numbers2) {
             totalPt2 += number.value.toInt()
         }
-        return Result(totalPt1, totalPt2)
+        a(totalPt2)
     }
 
     fun findLeftBrace(inp: String, start: Int): Int {

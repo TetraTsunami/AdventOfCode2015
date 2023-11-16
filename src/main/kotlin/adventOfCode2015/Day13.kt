@@ -4,7 +4,7 @@ import org.apache.commons.collections4.iterators.PermutationIterator
 
 @Suppress("unused")
 class Day13(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         val moodMap = mutableMapOf<Pair<String, String>, Int>()
         for (line in lines) {
             val words = line.split(" ")
@@ -34,6 +34,7 @@ class Day13(input: String) : Day(input) {
             }
             if (total > max1) max1 = total
         }
+        a(max1)
 
         // Part 2
         val people2 = people1.plus("Me")
@@ -50,6 +51,6 @@ class Day13(input: String) : Day(input) {
             }
             if (total > max2) max2 = total
         }
-        return Result(max1, max2)
+        a(max2)
     }
 }

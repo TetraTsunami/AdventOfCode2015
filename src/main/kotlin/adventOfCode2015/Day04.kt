@@ -5,21 +5,19 @@ import java.security.MessageDigest
 
 @Suppress("unused")
 class Day04(input: String) : Day(input) {
-    override fun solve(): Result {
+    override fun solve() {
         val inp = lines[0]
         var i = 0
-        var out1 = -1
-        var out2 = -1
         while (true) {
             val out = hash(inp + i.toString())
-            if (out1 == -1 && out.subSequence(0, 5) == "00000") {
-                out1 = i
+            if (!part1Solved && out.subSequence(0, 5) == "00000") {
+                a(i)
             }
-            if (out2 == -1 && out.subSequence(0, 6) == "000000") {
-                out2 = i
+            if (!part2Solved && out.subSequence(0, 6) == "000000") {
+                a(i)
             }
-            if (out1 != -1 && out2 != -1) {
-                return Result(out1, out2)
+            if (part2Solved) {
+                return
             }
             i++
         }
