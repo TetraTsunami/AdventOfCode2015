@@ -51,7 +51,7 @@ abstract class Day(protected var input: String) {
     /**
      * Represents solving a part of the day's puzzle. Prints immediately to the console.
      */
-    fun a(inp: Any) {
+    fun a(inp: Any?) {
         val endTime = System.currentTimeMillis()
         if (!part1Solved) {
             println("\tPart 1: $inp (${(endTime - startTime) / 1000.0}s)")
